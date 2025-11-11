@@ -32,9 +32,11 @@ void tampil(){
 }
 
 int main(){
+    cout << endl;
     sapa();
     daftar();
     tampil();
 
     return 5;
+
 }
