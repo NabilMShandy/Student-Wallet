@@ -31,12 +31,50 @@ void tampil(){
     }
 }
 
+int inputpengeluaran(int keluar[]){
+    for(int i = 0; i < 5; i++){
+        totalpengeluaran += keluar[i];
+    }
+    return totalpengeluaran;
+}
+
 int main(){
-    cout << endl;
     sapa();
     daftar();
     tampil();
+    do
+    {
+        tampil();
+        daftar();
+        cout << "Masukkan pilihan anda (1-4): "; cin >> choose;
+
+        switch (choose)
+        {
+
+        case 1:
+            for (int i = 0; i < 5; i++)
+            {
+                cout << "Masukkan pengeluaran kamu hari ini dengan kategori " << kategori[i] << ": Rp";
+                cin >> pengeluaran[i];
+                if(pengeluaran[i] < 0){
+                    break;
+                }
+            }
+            totalpengeluaran = inputpengeluaran(pengeluaran);
+            break;
+
+        case 2:
+            if (totalpengeluaran < 0)
+            {
+                cout << "Pengeluaran tidak bisa negatif!\n";
+            }
+            else
+            {
+                cout << "Total pengeluaran kamu: Rp" << totalpengeluaran << endl;
+            }
+            break;
 
     return 5;
 
 }
+
