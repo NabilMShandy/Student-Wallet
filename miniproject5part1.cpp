@@ -14,7 +14,7 @@ void sapa()
     cout << "----------------------------------------------------------------------\n";
 }
 
-void daftar()
+void menu()
 {
     cout << endl;
     cout << "1. Input Pengeluaran\n";
@@ -22,7 +22,6 @@ void daftar()
     cout << "3. Lihat Analisis\n";
     cout << "4. Keluar\n";
 }
-
 
 void tampil(){
     cout << "Berikut kategori pengeluaranmu" << endl;
@@ -40,7 +39,7 @@ int inputpengeluaran(int keluar[]){
 
 int main(){
     sapa();
-    daftar();
+    menu();
     tampil();
     do
     {
@@ -73,8 +72,6 @@ int main(){
                 cout << "Total pengeluaran kamu: Rp" << totalpengeluaran << endl;
             }
             break;
-
+            
     return 5;
-
 }
-
