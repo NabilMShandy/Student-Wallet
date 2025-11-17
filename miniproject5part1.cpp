@@ -38,18 +38,18 @@ int inputpengeluaran(int keluar[]){
 }
 
 int main(){
+    int choose;
+    string opt;
     sapa();
-    menu();
-    tampil();
+
     do
     {
         tampil();
-        daftar();
+        menu();
         cout << "Masukkan pilihan anda (1-4): "; cin >> choose;
 
         switch (choose)
         {
-
         case 1:
             for (int i = 0; i < 5; i++)
             {
@@ -63,15 +63,15 @@ int main(){
             break;
 
         case 2:
-            if (totalpengeluaran < 0)
-            {
+            if (totalpengeluaran < 0) {
                 cout << "Pengeluaran tidak bisa negatif!\n";
             }
-            else
-            {
+            else {
                 cout << "Total pengeluaran kamu: Rp" << totalpengeluaran << endl;
             }
             break;
-            
+        }
+    } while(opt == "y" || opt == "Y);
+        
     return 5;
 }
