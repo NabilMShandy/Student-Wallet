@@ -60,6 +60,18 @@ int analisis2(int mean[]){
     return rata;
 }
 
+void analisis3(int masukan[]){
+    double totalsemua = 0;
+    for(int ab = 0; ab < 5; ab++){
+        totalsemua += masukan[ab];
+    }
+
+    for(int as = 0; as < 5; as++){
+        cout << "Persentase pengeluaran kamu untuk " << kategori[as] << " adalah " << ((masukan[as] / totalsemua) * 100) << " %" << endl;
+    }
+
+    cout << endl;
+
 int main(){
     int choose;
     string opt;
