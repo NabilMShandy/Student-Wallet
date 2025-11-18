@@ -37,6 +37,15 @@ int inputpengeluaran(int keluar[]){
     return totalpengeluaran;
 }
 
+int analisis1(int arr[]){
+	for(int ac = 0; ac < 5; ac++ ){
+        if(arr[ac] > terbesar);
+		terbesar = arr[ac];
+		}
+	}
+	return terbesar;
+}
+
 int main(){
     int choose;
     string opt;
@@ -75,3 +84,4 @@ int main(){
         
     return 5;
 }
+
