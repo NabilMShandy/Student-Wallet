@@ -46,6 +46,20 @@ int analisis1(int arr[]){
 	return terbesar;
 }
 
+int analisis2(int mean[]){
+    double rata = 0;
+    for(int av = 0; av < 5; av++){
+        rata += mean[av];
+    }
+    rata /= 5.0;
+
+    if(rata >= 50000) cout << "Pengeluaran kamu termasuk boros!\n";
+    else if(rata < 50000) cout << "Pengeluaran kamu termasuk aman, tetapi masih harus lebih berhati-hati!\n";
+    else if(rata <= 30000) cout << "Pengeluaran kamu termasuk hemat, pertahankan!\n";
+
+    return rata;
+}
+
 int main(){
     int choose;
     string opt;
@@ -84,4 +98,5 @@ int main(){
         
     return 5;
 }
+
 
