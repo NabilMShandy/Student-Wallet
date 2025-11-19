@@ -43,7 +43,7 @@ int inputpengeluaran(int keluar[]){
 
 int analisis1(int arr[]){
 	for(int ac = 0; ac < 5; ac++ ){
-        if(arr[ac] > terbesar);
+        if(arr[ac] > terbesar);{
 		terbesar = arr[ac];
 		}
 	}
@@ -121,5 +121,6 @@ int main(){
         
     return 5;
 }
+
 
 
