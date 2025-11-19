@@ -69,8 +69,7 @@ void analisis3(int masukan[]){
     for(int as = 0; as < 5; as++){
         cout << "Persentase pengeluaran kamu untuk " << kategori[as] << " adalah " << ((masukan[as] / totalsemua) * 100) << " %" << endl;
     }
-
-    cout << endl;
+}
 
 int main(){
     int choose;
@@ -105,6 +104,11 @@ int main(){
                 cout << "Total pengeluaran kamu: Rp" << totalpengeluaran << endl;
             }
             break;
+		case 3:
+
+
+
+			
         }
     } while(opt == "y" || opt == "Y);
         
