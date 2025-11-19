@@ -31,9 +31,13 @@ void tampil(){
 }
 
 int inputpengeluaran(int keluar[]){
-    for(int i = 0; i < 5; i++){
-        totalpengeluaran += keluar[i];
-    }
+    for(int ax = 0; ax < 5; ax++){
+		if(keluar[ax] >=0){
+        totalpengeluaran += keluar[ax];
+    } else {
+			cout << "\n input pengeluaran tidak valid! \n\n";
+		}
+	}
     return totalpengeluaran;
 }
 
@@ -114,3 +118,4 @@ int main(){
         
     return 5;
 }
+
