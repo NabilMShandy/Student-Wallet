@@ -55,13 +55,17 @@ int analisis2(int mean[]){
     for(int av = 0; av < 5; av++){
         rata += mean[av];
     }
-    rata /= 5.0;
 
-    if(rata >= 50000) cout << "Pengeluaran kamu termasuk boros!\n";
-    else if(rata < 50000) cout << "Pengeluaran kamu termasuk aman, tetapi masih harus lebih berhati-hati!\n";
-    else if(rata <= 30000) cout << "Pengeluaran kamu termasuk hemat, pertahankan!\n";
-
-    return rata;
+    if(rata >= 50000){
+		cout << "Pengeluaran kamu termasuk boros!\n";
+	}
+    else if(rata < 50000){
+		cout << "Pengeluaran kamu termasuk aman, tetapi masih harus lebih berhati-hati!\n";
+	}
+    else if(rata <= 30000){
+		cout << "Pengeluaran kamu termasuk hemat, pertahankan!\n";
+	}
+    return rata /= 5.0;
 }
 
 void analisis3(int masukan[]){
@@ -77,7 +81,6 @@ void analisis3(int masukan[]){
 
 int main(){
     int choose;
-    string opt;
     sapa();
 
     do
@@ -114,8 +117,9 @@ int main(){
 
 			
         }
-    } while(opt == "y" || opt == "Y);
+    } while(choose != 4);
         
     return 5;
 }
+
 
