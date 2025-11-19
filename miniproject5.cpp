@@ -112,10 +112,10 @@ int main(){
             }
             break;
 		case 3:
-
-
-
-			
+            cout << "Pengeluaran terbesar kamu hari ini adalah: Rp" << analisis1(pengeluaran) << endl;
+            cout << "Pengeluaran rata-rata kamu hari ini: Rp" << analisis2(pengeluaran) << endl << endl;
+            analisis3(pengeluaran);
+            break;
         }
     } while(choose != 4);
         
