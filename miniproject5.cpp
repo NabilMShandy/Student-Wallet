@@ -118,9 +118,12 @@ int main(){
             break;
         }
     } while(choose != 4);
-        
+
+	cout << "Terima kasih telah menggunakan! \n\n"; 
+	
     return 5;
 }
+
 
 
 
