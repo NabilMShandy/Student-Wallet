@@ -47,9 +47,10 @@ int inputpengeluaran(int keluar[]){
     for(int ax = 0; ax < 5; ax++){
 		if (keluar[ax] >= 0){
         totalpengeluaran += keluar[ax];
-		exit(0);
+		
     } else {
 			cout << "\n input pengeluaran tidak valid! \n\n";
+			exit(0);
 		}
 	}
     return totalpengeluaran;
@@ -178,5 +179,6 @@ int main(){
 	
     return 5;
 }
+
 
 
