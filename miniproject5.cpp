@@ -4,7 +4,7 @@ using namespace std;
 
 // Variabel global
 int pengeluaran[5] = {0};
-int totalpengeluaran, terbesar = 0;
+int totalpengeluaran = 0;
 
 // Kategori pengeluaran
 string kategori[5] = {"Makan", "Bensin", "Jajan", "Sembako", "Lain-lain"};
@@ -57,6 +57,7 @@ int inputpengeluaran(int keluar[]){
 
 // Analisis 1 untuk mencari pengeluaran terbesar
 int analisis1(int arr[]){
+	int terbesar = 0;
 	for(int ac = 0; ac < 5; ac++ ){
         if(arr[ac] > terbesar);{
 		terbesar = arr[ac];
@@ -177,4 +178,5 @@ int main(){
 	
     return 5;
 }
+
 
