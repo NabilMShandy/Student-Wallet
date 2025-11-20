@@ -149,14 +149,9 @@ int main(){
             break;
 
         case 2:
-			 // Percabangan untuk mencegah input negatif
-            if (totalpengeluaran < 0) {
-                cout << "Pengeluaran tidak bisa negatif!\n";
-            }
-            else {
                 cout << "Total pengeluaran kamu: Rp" << totalpengeluaran << endl;
-            }
             break;
+			
 		case 3:
             cout << "Pengeluaran terbesar kamu hari ini adalah: Rp" << analisis1(pengeluaran) << endl;
             cout << "Pengeluaran rata-rata kamu hari ini: Rp" << analisis2(pengeluaran) << endl << endl;
@@ -176,3 +171,4 @@ int main(){
 	
     return 5;
 }
+
