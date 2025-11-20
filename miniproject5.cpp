@@ -1,19 +1,24 @@
 #include <iostream>
 using namespace std;
 
+// Variabel global
 int pengeluaran[5] = {0};
-int totalpengeluaran = 0;
-int terbesar = 0;
+int totalpengeluaran, terbesar = 0;
 
+// Kategori pengeluaran
 string kategori[5] = {"Makan", "Bensin", "Jajan", "Sembako", "Lain-lain"};
 
+// Void function untuk menampilkan teks sapa
 void sapa()
 {
-    cout << "----------------------------------------------------------------------\n";
-    cout << "-- Halo Mahasiswa! Selamat Datang di Aplikasi Manajemen Keuanganmu --\n";
-    cout << "----------------------------------------------------------------------\n";
+    cout << "=======================================================================\n";
+    cout << "-----------------------------------------------------------------------\n";
+    cout << "--- Halo Mahasiswa! Selamat Datang di Aplikasi Manajemen Keuanganmu ---\n";
+    cout << "-----------------------------------------------------------------------\n";
+    cout << "=======================================================================\n";
 }
 
+// Void function untuk menampilkan teks menu
 void menu()
 {
     cout << endl;
@@ -23,6 +28,7 @@ void menu()
     cout << "4. Keluar\n";
 }
 
+// Void function untuk menampilkan teks kategori
 void tampil(){
     cout << "Berikut kategori pengeluaranmu" << endl;
     for(int a = 0; a < 5; a++){
@@ -30,10 +36,12 @@ void tampil(){
     }
 }
 
+// Fungsi untuk menerima input pengeluaran dan mendapatkan total penjumlahan
 int inputpengeluaran(int keluar[]){
     for(int ax = 0; ax < 5; ax++){
-		if(keluar[ax] >=0){
+		if (keluar[ax] >= 0){
         totalpengeluaran += keluar[ax];
+		exit(0);
     } else {
 			cout << "\n input pengeluaran tidak valid! \n\n";
 		}
@@ -41,6 +49,7 @@ int inputpengeluaran(int keluar[]){
     return totalpengeluaran;
 }
 
+// Analisis 1 untuk mencari pengeluaran terbesar
 int analisis1(int arr[]){
 	for(int ac = 0; ac < 5; ac++ ){
         if(arr[ac] > terbesar);{
@@ -50,41 +59,76 @@ int analisis1(int arr[]){
 	return terbesar;
 }
 
+// Fungsi analisis2 untuk menghitung rata-rata pengeluaran user dan berisi percabangan untuk menganalisis pengeluaran
 int analisis2(int mean[]){
     double rata = 0;
+	
+	 // Hitung total
     for(int av = 0; av < 5; av++){
         rata += mean[av];
     }
 
-    if(rata >= 50000){
+	// Hitung total pengeluaran lalu cek percabangan
+    if (rata >= 50000){
 		cout << "Pengeluaran kamu termasuk boros!\n";
 	}
-    else if(rata < 50000){
+    else if (rata < 50000){
 		cout << "Pengeluaran kamu termasuk aman, tetapi masih harus lebih berhati-hati!\n";
 	}
-    else if(rata <= 30000){
+    else if (rata <= 30000){
 		cout << "Pengeluaran kamu termasuk hemat, pertahankan!\n";
 	}
     return rata /= 5.0;
 }
 
+// Fungsi analisis3 untuk menbcari persentase
 void analisis3(int masukan[]){
-    double totalsemua = 0;
-    for(int ab = 0; ab < 5; ab++){
-        totalsemua += masukan[ab];
+	double totalsemua = 0;
+	
+	// Hitung total
+	for(int ab = 0; ab < 5; ab++){
+		totalsemua += masukan[ab];
+	}
+
+	// Hitung persentase
+	for(int as = 0; as < 5; as++){
+		cout << "Persentase pengeluaran kamu untuk " << kategori[as] << " adalah " << ((masukan[as] / totalsemua) * 100) << " %" << endl;
+	}
+
+	cout << endl;
+
+    // Percabangan untuk mengecek kondisi dan mengeluarkan peringatan ke user tentang pengeluarannya
+    if(masukan[0] >= 30000){
+        cout << "Pengeluaran untuk kebutuhan makan sudah terlalu besar, yakni sebesar Rp" << masukan[0] << ", kamu harus lebih hemat!" << endl;
     }
 
-    for(int as = 0; as < 5; as++){
-        cout << "Persentase pengeluaran kamu untuk " << kategori[as] << " adalah " << ((masukan[as] / totalsemua) * 100) << " %" << endl;
+    if(masukan[1] >= 50000){
+        cout << "Pengeluaran untuk kebutuhan bensin sudah terlalu besar, yakni Rp" << masukan[1] << " ayo lebih berhemat!" << endl;
     }
+
+    if(masukan[2] >= 20000){
+        cout << "Pengeluaran untuk kebutuhan jajan sudah terlalu besar, yakni Rp" << masukan[2] << " kamu harus mengurangi jajanmu!" << endl;
+    }
+
+    if(masukan[3] >= 75000){
+        cout << "Pengeluaran untuk kebutuhan sembako sudah terlalu besar, yakni Rp" << masukan[3] << " kamu harus berhati-hati!" << endl;
+    }
+
+    if(masukan[4] >= 40000){
+        cout << "Pengeluaran untuk kebutuhan lain-lain sudah mencapai berlebihan, yakni sebesar Rp" << masukan[4] << " berhematlah!" << endl << endl;
+    }
+	
 }
 
+// Fungsi utama dimana kode akan dieksekusi
 int main(){
     int choose;
     sapa();
 
+	// Do while supaya menjalankan program sebelum looping berjalan
     do
     {
+		// Memanggil void function diatas
         tampil();
         menu();
         cout << "Masukkan pilihan anda (1-4): "; cin >> choose;
@@ -96,6 +140,7 @@ int main(){
             {
                 cout << "Masukkan pengeluaran kamu hari ini dengan kategori " << kategori[i] << ": Rp";
                 cin >> pengeluaran[i];
+				
                 if(pengeluaran[i] < 0){
                     break;
                 }
@@ -104,6 +149,7 @@ int main(){
             break;
 
         case 2:
+			 // Percabangan untuk mencegah input negatif
             if (totalpengeluaran < 0) {
                 cout << "Pengeluaran tidak bisa negatif!\n";
             }
@@ -116,6 +162,13 @@ int main(){
             cout << "Pengeluaran rata-rata kamu hari ini: Rp" << analisis2(pengeluaran) << endl << endl;
             analisis3(pengeluaran);
             break;
+			
+		case 4:
+			break;
+			
+		default:
+			cout << "Input tidak valid!";
+			break;
         }
     } while(choose != 4);
 
@@ -123,7 +176,3 @@ int main(){
 	
     return 5;
 }
-
-
-
-
