@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 
 // Variabel global
@@ -11,11 +12,16 @@ string kategori[5] = {"Makan", "Bensin", "Jajan", "Sembako", "Lain-lain"};
 // Void function untuk menampilkan teks sapa
 void sapa()
 {
-    cout << "=======================================================================\n";
-    cout << "-----------------------------------------------------------------------\n";
-    cout << "--- Halo Mahasiswa! Selamat Datang di Aplikasi Manajemen Keuanganmu ---\n";
-    cout << "-----------------------------------------------------------------------\n";
-    cout << "=======================================================================\n";
+    // Mengakses emoji
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    cout << "=========================================================================\n";
+    cout << "---------------------------- 😀😀😀 -----------------------------------\n";
+    cout << "------------------------- Student Wallet -------------------------------\n";
+    cout << "---- Student Wallet Selamat Datang di Aplikasi Manajemen Keuanganmu ----\n";
+    cout << "---------------------------- 😀😀😀 -----------------------------------\n";
+    cout << "=========================================================================\n";
 }
 
 // Void function untuk menampilkan teks menu
@@ -69,15 +75,16 @@ int analisis2(int mean[]){
     }
 
 	// Hitung total pengeluaran lalu cek percabangan
-    if (rata >= 50000){
-		cout << "Pengeluaran kamu termasuk boros!\n";
-	}
-    else if (rata < 50000){
-		cout << "Pengeluaran kamu termasuk aman, tetapi masih harus lebih berhati-hati!\n";
-	}
-    else if (rata <= 30000){
-		cout << "Pengeluaran kamu termasuk hemat, pertahankan!\n";
-	}
+   if(rata >= 50000){
+        cout << "Pengeluaran kamu termasuk boros! 😥😥😥\n";
+    }
+    else if(rata >= 25000 && rata < 50000){
+        cout << "Pengeluaran kamu termasuk aman, tetapi masih harus lebih berhati-hati! 😐😐😐 \n"; 
+    }
+    else if(rata < 25000){
+        cout << "Pengeluaran kamu termasuk hemat, pertahankan! 😁😁😁\n";
+    }
+	
     return rata /= 5.0;
 }
 
@@ -99,25 +106,24 @@ void analisis3(int masukan[]){
 
     // Percabangan untuk mengecek kondisi dan mengeluarkan peringatan ke user tentang pengeluarannya
     if(masukan[0] >= 30000){
-        cout << "Pengeluaran untuk kebutuhan makan sudah terlalu besar, yakni sebesar Rp" << masukan[0] << ", kamu harus lebih hemat!" << endl;
+        cout << "Pengeluaran untuk kebutuhan makan sudah terlalu besar, yakni sebesar Rp" << masukan[0] << ", kamu harus lebih hemat! 😯" << endl;
     }
 
     if(masukan[1] >= 50000){
-        cout << "Pengeluaran untuk kebutuhan bensin sudah terlalu besar, yakni Rp" << masukan[1] << " ayo lebih berhemat!" << endl;
+        cout << "Pengeluaran untuk kebutuhan bensin sudah terlalu besar, yakni Rp" << masukan[1] << " ayo lebih berhemat! 😯" << endl;
     }
 
     if(masukan[2] >= 20000){
-        cout << "Pengeluaran untuk kebutuhan jajan sudah terlalu besar, yakni Rp" << masukan[2] << " kamu harus mengurangi jajanmu!" << endl;
+        cout << "Pengeluaran untuk kebutuhan jajan sudah terlalu besar, yakni Rp" << masukan[2] << " kamu harus mengurangi jajanmu! 😯" << endl;
     }
 
     if(masukan[3] >= 75000){
-        cout << "Pengeluaran untuk kebutuhan sembako sudah terlalu besar, yakni Rp" << masukan[3] << " kamu harus berhati-hati!" << endl;
+        cout << "Pengeluaran untuk kebutuhan sembako sudah terlalu besar, yakni Rp" << masukan[3] << " kamu harus berhati-hati! 😯" << endl;
     }
 
     if(masukan[4] >= 40000){
-        cout << "Pengeluaran untuk kebutuhan lain-lain sudah mencapai berlebihan, yakni sebesar Rp" << masukan[4] << " berhematlah!" << endl << endl;
+        cout << "Pengeluaran untuk kebutuhan lain-lain sudah mencapai berlebihan, yakni sebesar Rp" << masukan[4] << " berhematlah! 😯" << endl << endl;
     }
-	
 }
 
 // Fungsi utama dimana kode akan dieksekusi
@@ -171,4 +177,3 @@ int main(){
 	
     return 5;
 }
-
